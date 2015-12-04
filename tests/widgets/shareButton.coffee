@@ -27,3 +27,9 @@ module.exports = ->
   @Widgets.ShareButtonNetworks = @Widget.List.extend
     root: 'share-button ul'
     itemSelector: 'li'
+
+  @Widgets.Body = @Widget.extend
+    root: 'body'
+
+    triggerCloseButton: ->
+      return this.click('#close')
