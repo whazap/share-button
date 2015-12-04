@@ -17,6 +17,14 @@
       right: 0;
       z-index: 100;
     }
+    #close {
+      float: right;
+      border: 2px solid #f00;
+      padding: 10px;
+      text-transform: uppercase;
+      background-color: #fff;
+      text-align: center;
+    }
   </style>
   <meta name='description' content='A simple, light, flexible, and good-looking share button'>
   <meta property='og:image' content='http://carrot.is/img/fb-share.jpg'>
@@ -24,6 +32,7 @@
 
 <body>
   <share-button></share-button>
+  <button id="close">close</button>
   <script src='../../dist/share-button.min.js'></script>
   <script>
     var shareButton = new ShareButton({
@@ -31,6 +40,9 @@
         flyout: 'center bottom'
       }
     });
+    document.getElementById('close').addEventListener('click', function () {
+      shareButton.close();
+    }, false);
   </script>
 </body>
 

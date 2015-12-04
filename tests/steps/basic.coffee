@@ -22,3 +22,12 @@ module.exports = ->
       .each (item, i) ->
         unless (item.hasClass('whatsapp').then (tf) -> tf)
           item.isVisible().should.eventually.eql(true)
+
+  @When /^I close the Share Button manually by calling the close method$/, ->
+    new @Widgets.Body().triggerCloseButton()
+
+  @Then /^I should no longer see any Social Network$/, ->
+    new @Widgets
+    .ShareButtonNetworks()
+    .each (item, i) ->
+        item.isVisible().should.eventually.eql(false)
