@@ -24,10 +24,11 @@ module.exports = ->
           item.isVisible().should.eventually.eql(true)
 
   @When /^I close the Share Button manually by calling the close method$/, ->
+    new @Widgets.ShareButton().click()
     new @Widgets.Body().triggerCloseButton()
 
   @Then /^I should no longer see any Social Network$/, ->
     new @Widgets
-    .ShareButtonNetworks()
-    .each (item, i) ->
-        item.isVisible().should.eventually.eql(false)
+      .ShareButtonSocial()
+      .hasClass('active')
+      .should.eventually.be.false
