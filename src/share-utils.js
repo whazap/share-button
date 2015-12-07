@@ -33,13 +33,13 @@ class ShareUtils {
 
   /**
    * @method _show
-   * @description Change element's display to 'block'
+   * @description Removes the element's inline display style
    * @private
    *
    * @param {DOMNode} el
    */
   _show(el) {
-    el.style.display = "initial";
+    el.style.display = "";
   }
 
   /**
