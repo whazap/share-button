@@ -729,7 +729,8 @@ class ShareButton extends ShareUtils {
   _detectNetworks() {
     // Update network-specific configuration with global configurations
     for (let network of Object.keys(this.config.networks)) {
-      let display;
+      let displayClass = 'disabled';
+
       for (let option of Object.keys(this.config.networks[network])) {
         if (this.config.networks[network][option] === null) {
           this.config.networks[network][option] = this.config[option];
@@ -738,13 +739,11 @@ class ShareButton extends ShareUtils {
 
       // Check for enabled networks and display them
       if (this.config.networks[network].enabled) {
-        this.class = 'enabled';
+        displayClass = 'enabled';
         this.config.enabledNetworks += 1;
       }
-      else
-        this.class = 'disabled';
 
-      this.config.networks[network].class = this.class;
+      this.config.networks[network].class = displayClass;
     }
   }
 
