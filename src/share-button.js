@@ -271,7 +271,7 @@ class ShareButton extends ShareUtils {
    */
   _eventToggle(button, networks) {
     if (this._hasClass(networks, 'active'))
-      this._eventClose(networks);
+      this._eventClose(button, networks);
     else
       this._eventOpen(button, networks);
   }
@@ -299,9 +299,10 @@ class ShareButton extends ShareUtils {
    * @private
    *
    * @param {DOMNode} button
+   * @param {DOMNode} networks
    */
-  _eventClose(button) {
-    this._removeClass(button, 'active');
+  _eventClose(button, networks) {
+    this._removeClass(networks, 'active');
   }
 
   /**
