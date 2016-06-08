@@ -27,7 +27,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "pioneer": "^0.11.6"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.8.0",
@@ -47,7 +46,6 @@
     "stylus": "^0.52.4"
   },
   "scripts": {
-    "test": "pioneer"
   },
   "keywords": [
     "share",
